@@ -30,12 +30,8 @@ var Home = (function() {
 		},
 
 		rendergems : function(response) {
-			alert(response.gems);
 		 	gems = response.gems.split(', ');
-		 	userText = $('#usertext').val()
-		 	for(i=0;i<gems.length;i++){
-		 		alert(gems[i]);
-		 	}
+		 	userText = $('#usertext').val();		 	
 			$('#form-main').hide();
 			$('#gems').append(userText);
 			$('#gems').wrapInTag({
