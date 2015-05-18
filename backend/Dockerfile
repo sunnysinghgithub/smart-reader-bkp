@@ -20,3 +20,5 @@ RUN python -m nltk.downloader punkt
 RUN python -m nltk.downloader maxent_treebank_pos_tagger
 
 RUN pip install -U numpy
+
+RUN python -m nltk.downloader stopwords

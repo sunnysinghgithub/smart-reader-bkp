@@ -35,10 +35,19 @@ var Home = (function() {
 			$('#form-main').hide();
 			$('#gems').append(userText);
 			$('#gems').wrapInTag({
-			  tag: 'gem',
+			  tag: 'gem class=\"gem\"',
 			  words: gems
 			});
+			//Home.animategems();
+		},
+
+		animategems : function() {
+			$('.gem').each(function() {
+				$(this).stop().animate({
+		        fontSize: '24px'}, 10000)
+			});
 		}
+
 	};
 })();
 

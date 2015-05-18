@@ -1,8 +1,11 @@
-gem {
+.gem {
 	font-weight: bold;
 	font-size: 20px;
+	color: #4682B4;
 }
 
 #gems {
-	
+	font-size: 15px;
+	word-spacing: 30px;
+	color: gray;
 }
