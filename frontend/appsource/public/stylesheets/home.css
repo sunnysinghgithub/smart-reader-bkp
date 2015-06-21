@@ -2,10 +2,26 @@
 	font-weight: bold;
 	font-size: 20px;
 	color: #4682B4;
+	padding-left:10px;
+	padding-right:10px;
 }
 
 #gems {
 	font-size: 15px;
 	word-spacing: 30px;
 	color: gray;
+	display: none;
+	white-space: pre-wrap;      /* CSS3 */   
+   	white-space: -moz-pre-wrap; /* Firefox */    
+   	white-space: -pre-wrap;     /* Opera <7 */   
+   	white-space: -o-pre-wrap;   /* Opera 7 */    
+   	word-wrap: break-word;      /* IE */
+}
+
+#userselection {
+	display: none;
+}
+
+.userselradio {
+	text-align: center;
 }

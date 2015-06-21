@@ -18,7 +18,7 @@ router.post('/findgems', function(req, res, next) {
 	console.log(req.body);
 	client.invoke("hello", req.body.body, function(error, response, more) {
 		    console.log(response);
-		    res.write(JSON.stringify({ gems: response }));
+		    res.write(response);
 		    res.end();
 	});
 });

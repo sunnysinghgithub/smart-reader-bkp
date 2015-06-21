@@ -19,8 +19,19 @@ html(lang="en")
 			div.row
 				form#form-main
 					p
-						textarea#usertext.form-control(rows='15' placeholder='Enter some text here and let us find your gems') 
+						textarea#usertext.form-control(rows='15' title='Enter some text here and let us find your gems') 
 					p
 						div(align='center')
 							button#btn-findgems.btn.btn-primary(type='submit' value='Submit') Find my gems
-				div#gems
+				div#userselection
+					form.form-inline
+						div.row
+							div.radio.form-group.col-md-6.col-lg-6.col-xs-6.userselradio
+								input#radio-all(type='radio',name='user-content-selection')
+								label(for='radio-all')
+									| All
+							div.radio.form-group.col-md-6.col-lg-6.col-xs-6.userselradio
+								input#radio-gemsonly(type='radio',name='user-content-selection')
+								label(for='radio-gemsonly')
+									| Gems Only
+				div#gems					

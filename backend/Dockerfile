@@ -22,3 +22,7 @@ RUN python -m nltk.downloader maxent_treebank_pos_tagger
 RUN pip install -U numpy
 
 RUN python -m nltk.downloader stopwords
+
+RUN pip install beautifulsoup4
+
+RUN pip install requests
