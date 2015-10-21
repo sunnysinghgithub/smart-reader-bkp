@@ -74,10 +74,11 @@ content = soup.find(id='mw-content-text')
 
 sentence = ' '.join(content.text.split())
 
-print (sentence)
-
 keywords = rake.run(sentence)
 
+print (keywords)
+
+'''
 extract = content.find('p')
 
 texts = soup.findAll(text=True)
@@ -91,4 +92,12 @@ def visible(element):
 
 visible_texts = filter(visible, texts)
 
+print (len(keywords))
+
+print (len(keywords)/3)
+
+reallyimp = keywords[:(len(keywords)/3)]
+
+print(len(reallyimp))
+'''
 

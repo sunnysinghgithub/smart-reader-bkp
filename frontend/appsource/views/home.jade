@@ -1,37 +1,31 @@
-doctype html
-html(lang="en")
-	head
-		title = Welcome!
-		meta(charset='utf-8')
-		meta(http-equiv='X-UA-Compatible', content='IE=edge')
-		link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css", rel="stylesheet")
-		link(href="/stylesheets/home.css", rel="stylesheet")
-		script(src="https://code.jquery.com/jquery-2.1.4.min.js")
-		script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js")
-		script(src="/javascripts/home.js")		
-	body
-		div.jumbotron
-			div.container
-				h1 Read Smart. Be Smart.
-				p
-					| A simple and easy way to see what matters the most.
+extends layout
+
+block title
+	title Smart Reader
+
+block content
+	div#header.jumbotron
 		div.container
-			div.row
-				form#form-main
-					p
-						textarea#usertext.form-control(rows='15' title='Enter some text here and let us find your gems') 
-					p
-						div(align='center')
-							button#btn-findgems.btn.btn-primary(type='submit' value='Submit') Find my gems
-				div#userselection
-					form.form-inline
-						div.row
-							div.radio.form-group.col-md-6.col-lg-6.col-xs-6.userselradio
-								input#radio-all(type='radio',name='user-content-selection')
-								label(for='radio-all')
-									| All
-							div.radio.form-group.col-md-6.col-lg-6.col-xs-6.userselradio
-								input#radio-gemsonly(type='radio',name='user-content-selection')
-								label(for='radio-gemsonly')
-									| Gems Only
-				div#gems					
+			h1
+				a#homelink(href="/home").header
+					| Read Smart. Be Smart.
+			p
+				| We help you read what matters.
+	div.container
+		form#form-main
+			div.form-group
+				textarea#usertext.form-control(rows="25",placeholder="Type your text here.") 
+			div#div-submit.form-group
+				button#btn-findgems.btn.btn-lg.btn-default(type='submit' value='Submit')
+					span.glyphicon.glyphicon-search
+					|  Find Gems
+		div.result
+			div.alert.alert-success(role="alert")
+				| Congratulations! We have found your gems!
+			div#userselection.well.well-sm
+				input#checkbox-usersel(type='checkbox')
+				button#btn-start-over.btn.btn-default.btn-sm.pull-right
+					span.glyphicon.glyphicon-chevron-left
+					| Start Over
+			div.well.well-sm
+				div#gems.panel-body

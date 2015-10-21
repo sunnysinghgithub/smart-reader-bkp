@@ -1,7 +1,46 @@
+/******************** Header *****************************/
+* {
+  margin: 0;
+}
+
+.jumbotron {
+	background-color: #337AB7;
+	color: #ADE705;
+	padding-top: 5%;
+}
+
+.header {
+	color: white;
+}
+
+/******************** Navbar *****************************/
+
+.navbar-btn{
+    margin-left:10px;
+}
+
+.navbar-customs {
+	color: #ADE705;
+}
+
+/******************** Body *****************************/
+
+html, body {
+  height: 100%;
+}
+
+.result {
+	padding-top: 8%;
+}
+
+.content {
+	height: 100%;
+}
+
 .gem {
 	font-weight: bold;
 	font-size: 20px;
-	color: #4682B4;
+	color: #2F0B3A;
 	padding-left:10px;
 	padding-right:10px;
 }
@@ -15,13 +54,39 @@
    	white-space: -moz-pre-wrap; /* Firefox */    
    	white-space: -pre-wrap;     /* Opera <7 */   
    	white-space: -o-pre-wrap;   /* Opera 7 */    
-   	word-wrap: break-word;      /* IE */
+  	word-wrap: break-word;      /* IE */
+  	margin-top: 30px;
 }
 
-#userselection {
-	display: none;
+#div-submit {
+	margin-top: 20px;
+	text-align: center;
 }
 
 .userselradio {
 	text-align: center;
 }
+
+#login {
+	padding:3%;
+}
+
+.login-btn{
+    margin-left:10px;
+}
+
+/******************** Footer *****************************/
+footer { 
+	background-color: gray; 
+	padding: 2%; 
+	color: black; 
+	text-align: center;
+	bottom: 0px;
+	width: 100%;
+    border-top: solid gray;
+    border-top-width: 1px;
+}
+
+footer p { font-size: 24px; line-height: 32px;}
+footer p.small { font-size: 12px; line-height: 15px; }
+footer a { color: white; }

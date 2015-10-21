@@ -1,9 +1,9 @@
-var highlightImportantWords = (function() {
-	_sendRequestToGetSelectedText = function() {
+var ImportantwordsHighlighter = (function() {
+	_sendRequestToHighlightImportantWords = function() {
 		var request = {
-			method : "getSelectedText"
+			method : "highlightImpWords"
 		};
-		_sendMessageToPage(request, _processSelectedText);
+		_sendMessageToPage(request, function() {console.log('done');});
 	};
 	_sendMessageToPage = function(request, callback) {
 		chrome.tabs.query({
@@ -12,28 +12,15 @@ var highlightImportantWords = (function() {
 		}, function(tabs) {
 			chrome.tabs.sendMessage(tabs[0].id, request, callback);
 		});
-	};
-	_processSelectedText = function(response) {
-		alert(response.selectedText);
-		var _text = response.selectedText;
-		var words = _text.split(' ');
-		var request = {
-			method : "importantWords",
-			importantWords : words
-		};
-		_sendMessageToPage(request, null);
-	};
-	_highlightImportantWords = function() {
-
-	};
+	}
 	return {
-		getSelectedTextFromBrowser : function(response) {
-			return _sendRequestToGetSelectedText();
+		highlightImportantWords : function() {
+			_sendRequestToHighlightImportantWords();
 		}
 	};
 }());
 
 document.addEventListener('DOMContentLoaded', function() {
 	document.getElementById('highlightImportantWords').addEventListener(
-			'click', highlightImportantWords.getSelectedTextFromBrowser);
+			'click', ImportantwordsHighlighter.highlightImportantWords);
 });

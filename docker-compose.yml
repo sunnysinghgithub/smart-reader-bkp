@@ -9,6 +9,7 @@ frontend:
   - NODE_PATH=/usr/lib/node_modules
  links:
   - backend
+ restart: always
 backend:
  image: backend
  volumes:
@@ -16,3 +17,4 @@ backend:
  command: bash -c "cd appsource && python hellorpc.py"
  ports:
   - "5000:5000"
+ restart: always

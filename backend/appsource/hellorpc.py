@@ -63,6 +63,8 @@ class HelloRPC(object):
 
 		importantwords = ', '.join(extracted)
 
+		importantwords = importantwords[:(len(importantwords)/3)]
+
 		return json.dumps([dict(name=keyword[0],weight=keyword[1]) for keyword in keywords])
 		
 s = zerorpc.Server(HelloRPC())
