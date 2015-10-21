@@ -11,6 +11,13 @@
 
 .header {
 	color: white;
+	text-decoration: none;
+}
+
+.header:hover {
+	background-color: transparent;
+	text-decoration: none;
+	color: white;
 }
 
 /******************** Navbar *****************************/
@@ -67,7 +74,7 @@ html, body {
 	text-align: center;
 }
 
-#login {
+#login, #register {
 	padding:3%;
 }
 
@@ -77,7 +84,7 @@ html, body {
 
 /******************** Footer *****************************/
 footer { 
-	background-color: gray; 
+	background-color: #d3d3d3; 
 	padding: 2%; 
 	color: black; 
 	text-align: center;

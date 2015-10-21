@@ -32,6 +32,18 @@ var Home = (function() {
         	width: '800px',
         	height: '390px'
 		}); // fancybox
+		$("#btn-register").fancybox({
+		    autoScale: true,
+		    autoSize: false,
+		    href : '#register',
+		    padding: 0,
+		    closeClick : false,
+		    titleShow : false,
+        	transitionIn : 'elastic',
+        	transitionOut : 'elastic',
+        	width: '800px',
+        	height: '390px'
+		}); // fancybox
 	},
 	_showDisplaySwitch = function() {
 		$('#checkbox-usersel').bootstrapSwitch({

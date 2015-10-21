@@ -31,7 +31,7 @@ html(lang="en")
 							span.icon-bar
 							span.icon-bar
 							span.icon-bar
-						a.navbar-brand(href="#")
+						a.navbar-brand(href="/home")
 							| SmartReader
 					div#navbar.navbar-collapse.collapse
 						ul.nav.navbar-nav
@@ -57,7 +57,7 @@ html(lang="en")
 									span.glyphicon.glyphicon-user
 									|   Login
 							li
-								button.btn.btn-default.btn-sm.navbar-btn
+								button#btn-register.btn.btn-default.btn-sm.navbar-btn
 									span.glyphicon.glyphicons-plus
 										| +
 									|   Register
@@ -65,43 +65,79 @@ html(lang="en")
 			block content
 			div.hidden
 				div#login
-					div.well
-						form.form-horizontal
-							div.form-group
-								label.col-sm-2.control-label(for="input-email")
-									| Email
-								div.col-sm-10
-									input#input-email.form-control(type="email",placeholder="Email")
-							div.form-group
-								label.col-sm-2.control-label(for="input-password")
-									| Password
-								div.col-sm-10
-									input#input-password.form-control(type="password",placeholder="Password")
-							div.form-group
-								div.col-sm-offset-2.col-sm-10
-									div.checkbox
-										label
-											input(type="checkbox")
-											| Remember me
-							div.form-group
-								div.col-sm-offset-2.col-sm-10
-									button.btn.btn-default(type="submit")
-										| Sign in
-					div.well
-						a.btn.btn-sm.btn-default.btn-social.btn-facebook.login-btn
-							i.fa.fa-facebook
-							| Sign in with Facebook
-						a.btn.btn-sm.btn-default.btn-social.btn-twitter.login-btn
-							i.fa.fa-twitter
-							| Sign in with Twitter
-						a.btn.btn-sm.btn-default.btn-social.btn-google.login-btn
-							i.fa.fa-google
-							| Sign in with Google
+					div.panel.panel-primary
+						div.panel-heading
+							span.glyphicon.glyphicon-user
+							b  Login
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for="input-email")
+										| Email
+									div.col-sm-10
+										input#input-email.form-control(type="email",placeholder="Email")
+								div.form-group
+									label.col-sm-2.control-label(for="input-password")
+										| Password
+									div.col-sm-10
+										input#input-password.form-control(type="password",placeholder="Password")
+								div.form-group
+									div.col-sm-offset-2.col-sm-10
+										div.checkbox
+											label
+												input(type="checkbox")
+												| Remember me
+								div.form-group
+									div.col-sm-offset-2.col-sm-10
+										button.btn.btn-default(type="submit")
+											| Sign in
+						div.panel-footer
+							a.btn.btn-sm.btn-default.btn-social.btn-facebook.login-btn
+								i.fa.fa-facebook
+								| Sign in with Facebook
+							a.btn.btn-sm.btn-default.btn-social.btn-twitter.login-btn
+								i.fa.fa-twitter
+								| Sign in with Twitter
+							a.btn.btn-sm.btn-default.btn-social.btn-google.login-btn
+								i.fa.fa-google
+								| Sign in with Google
+				div#register
+					div.panel.panel-primary
+						div.panel-heading
+							span.glyphicon.glyphicons-plus
+								| +
+							b  Register
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for="input-fname")
+										| First Name
+									div.col-sm-10
+										input#input-fname.form-control(type="text",placeholder="First Name")
+								div.form-group
+									label.col-sm-2.control-label(for="input-lname")
+										| Last Name
+									div.col-sm-10
+										input#input-lname.form-control(type="text",placeholder="Last Name")
+								div.form-group
+									label.col-sm-2.control-label(for="input-email")
+										| Email
+									div.col-sm-10
+										input#input-email.form-control(type="email",placeholder="Email")
+								div.form-group
+									label.col-sm-2.control-label(for="input-password")
+										| Password
+									div.col-sm-10
+										input#input-password.form-control(type="password",placeholder="Password")
+								div.form-group
+									div.col-sm-offset-2.col-sm-10
+										button.btn.btn-default(type="submit")
+											| Register
 		footer
 			div.container
 				p.small
 					| Designed and developed by:
 				a(href="https://www.linkedin.com/pub/sunny-singh/3b/565/a5",style="text-decoration:none;")
-					span(style="font: 80% Arial,sans-serif; color:#0783B6;")
+					span(style="font: 90% Arial,sans-serif; color:#0783B6;")
 						img(src="https://static.licdn.com/scds/common/u/img/webpromo/btn_in_20x15.png" width="20" height="15" alt="View Sunny Singh's LinkedIn profile" style="vertical-align:middle;" border="0")
 						| &nbsp;Sunny Singh
