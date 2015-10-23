@@ -4,11 +4,12 @@ frontend:
  volumes:
   - "./frontend/appsource:/appsource"
  ports:
-  - "3000:3000"
+  - "80:3000"
  environment:
   - NODE_PATH=/usr/lib/node_modules
  links:
   - backend
+  - mongodb
  restart: always
 backend:
  image: backend
@@ -18,3 +19,5 @@ backend:
  ports:
   - "5000:5000"
  restart: always
+mongodb:
+ image: mongo

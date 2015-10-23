@@ -90,8 +90,6 @@ footer {
 	text-align: center;
 	bottom: 0px;
 	width: 100%;
-    border-top: solid gray;
-    border-top-width: 1px;
 }
 
 footer p { font-size: 24px; line-height: 32px;}

@@ -5,8 +5,9 @@ var client = new zerorpc.Client();
 var router = express.Router();
 var viewCount = 1;
 
+/* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+    res.render('home', { title: 'Smart Reader - Home', viewCount: viewCount++});
 });
 
 /* GET home page. */

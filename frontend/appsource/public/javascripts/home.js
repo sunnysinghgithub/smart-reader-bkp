@@ -20,6 +20,7 @@ var Home = (function() {
 				$('#form-main').show('slide',{direction: 'left'}, 200);
 			});
 		});
+		$('#btn-login-twitter').click(Home.loginWithTwitter);
 		$("#btn-login").fancybox({
 		    autoScale: true,
 		    autoSize: false,
@@ -88,6 +89,10 @@ var Home = (function() {
 					$("#header").hide('slide',{direction: 'left'}, 500, Home.renderGems(response));
 					// Hide the Home section
 					$('#form-main').hide('slide',{direction: 'left'}, 500, Home.renderGems(response));					
+				},
+				error: function(XMLHttpRequest, textStatus, errorThrown) {
+					spinner.stop();
+					alert("some error");
 				}
 			});
 		},
@@ -102,6 +107,23 @@ var Home = (function() {
 					.filter(function(){return this.nodeType === 3})
 					.wrap('<span class="not-gem" />');
 			});			
+		},
+		loginWithTwitter : function() {
+			var spinner = new Spinner().spin();
+			$.ajax({
+				method: "GET",
+				contentType: "application/json",
+				url: "/login/twitter",
+				beforeSend: function() {
+					$('#login').append(spinner.el);
+				},
+				success: function(response) {
+					spinner.stop();
+					var resObj = JSON.parse(response);
+					document.location.href = resObj.location;
+					console.log(resObj.location);
+				}
+			});
 		}
 	};
 })();

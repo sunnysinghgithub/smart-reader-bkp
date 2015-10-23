@@ -52,15 +52,24 @@ html(lang="en")
 									span.glyphicon.glyphicon-download-alt
 									|  Chrome Extension
 						ul.nav.navbar-nav.navbar-right
-							li
-								button#btn-login.btn.btn-default.btn-sm.navbar-btn
-									span.glyphicon.glyphicon-user
-									|   Login
-							li
-								button#btn-register.btn.btn-default.btn-sm.navbar-btn
-									span.glyphicon.glyphicons-plus
-										| +
-									|   Register
+							if user
+								li
+									p.navbar-text
+										| #{user.name}
+								li
+									button#btn-login.btn.btn-default.btn-sm.navbar-btn
+										|   Logout
+							else
+								li
+									button#btn-login.btn.btn-default.btn-sm.navbar-btn
+										span.glyphicon.glyphicon-user
+										|   Login
+								li
+									button#btn-register.btn.btn-default.btn-sm.navbar-btn
+										span.glyphicon.glyphicons-plus
+											| +
+										|   Register
+
 		div.content
 			block content
 			div.hidden
@@ -95,7 +104,7 @@ html(lang="en")
 							a.btn.btn-sm.btn-default.btn-social.btn-facebook.login-btn
 								i.fa.fa-facebook
 								| Sign in with Facebook
-							a.btn.btn-sm.btn-default.btn-social.btn-twitter.login-btn
+							a#btn-login-twitter.btn.btn-sm.btn-default.btn-social.btn-twitter.login-btn
 								i.fa.fa-twitter
 								| Sign in with Twitter
 							a.btn.btn-sm.btn-default.btn-social.btn-google.login-btn
