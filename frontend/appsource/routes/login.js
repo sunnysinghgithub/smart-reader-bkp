@@ -162,15 +162,22 @@ function sendUserIdentityRequest(response) {
   	// Set up the request
 	var post_req = https.request(post_options, function(res) {
 	  res.setEncoding('utf8');
+	  var userIdentityData = "";
+
 	  res.on('data', function (chunk) {
-		  console.log('Response: ' + chunk);
-		  var userIdentity = JSON.parse(chunk);
-		  var user = {};
-		  user.name = userIdentity.name;
-		  var dbUser = new User;
-		  dbUser.name = user.name;
-		  dbUser.save();
-		  response.render('home', { title: 'Smart Reader - Home', user: user});
+	  	  userIdentityData += chunk;
+		  console.log('Chunk: ' + chunk);
+	  });
+	  res.on('end', function () {
+		console.log("Done receiving data...");
+		console.log("userIdentityData: "+userIdentityData);
+		var userIdentity = JSON.parse(userIdentityData);
+		var user = {};
+		user.name = userIdentity.name;
+		var dbUser = new User;
+		dbUser.name = user.name;
+		dbUser.save();
+		response.render('home', { title: 'Smart Reader - Home', user: user});
 	  });
 	  res.on('error', function(error) {
 	  	console.log(error);
